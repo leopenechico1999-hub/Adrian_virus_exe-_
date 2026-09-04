@@ -1,19 +1,48 @@
 package com.example.leo_adrian;
-import android.app.*; import android.os.*; import android.view.*; import android.widget.*;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
- TextView story; Button yes,no; int step=0;
- public void onCreate(Bundle b){super.onCreate(b);setContentView(R.layout.activity_main);
-  story=findViewById(R.id.story); yes=findViewById(R.id.yes); no=findViewById(R.id.no);
-  yes.setOnClickListener(v->next()); no.setOnClickListener(v->finishGame());
- }
- void next(){ step++;
-  if(step==1){story.setText("📱 Adrián: “¿Un FF? 🎮🔥”\n\nLeo acepta y comienza la partida.");}
-  else if(step==2){story.setText("🎮 PARTIDA DE FREE FIRE\n\n💥 ¡Adrián ha sido tumbado!\n\nAdrián: “¡Leo, ayúdame!”");}
-  else if(step==3){story.setText("💥 ¡LEO TAMBIÉN FUE TUMBADO!\n\nLeo: “¡Adrián…!”");}
-  else if(step==4){story.setText("🌆 Después de la partida, se encuentran en persona.\n\nSe miran a los ojos, nerviosos...");}
-  else if(step==5){story.setText("❤️ Leo y Adrián, al mismo tiempo:\n\n“Me... gustas.”");}
-  else {story.setText("❤️ Se acercan tímidamente y se dan un pequeño beso.\n\n✨ FIN DEL JUEGO ✨"); yes.setVisibility(View.GONE); no.setVisibility(View.GONE);}
- }
- void finishGame(){ story.setText("❌ Leo dijo que no.\n\nFIN DEL JUEGO."); yes.setVisibility(View.GONE); no.setVisibility(View.GONE); }
+
+    TextView story;
+    Button yes, no;
+    int step = 0;
+
+    @Override
+    protected void onCreate(Bundle b) {
+        super.onCreate(b);
+        setContentView(R.layout.activity_main);
+
+        story = findViewById(R.id.story);
+        yes = findViewById(R.id.yes);
+        no = findViewById(R.id.no);
+
+        yes.setOnClickListener(v -> next());
+        no.setOnClickListener(v -> next());
+
+        story.setText("🎮 Leo y Adrián\n\nUna historia que comenzó en una partida...");
+    }
+
+    void next() {
+        step++;
+
+        if (step == 1) {
+            story.setText("🔥 Leo y Adrián caen juntos en la partida.");
+        } else if (step == 2) {
+            story.setText("⚔️ De repente, tumban a Adrián.\n\nLeo grita: \"¡Amor, ayúdame!\"");
+        } else if (step == 3) {
+            story.setText("💥 Leo corre para ayudarlo...");
+        } else if (step == 4) {
+            story.setText("💀 Pero también tumban a Leo.\n\nLa partida termina.");
+        } else if (step == 5) {
+            story.setText("❤️ Después se encuentran en persona.\n\nSe miran a la cara...");
+        } else {
+            story.setText("💋 Leo y Adrián se dan un beso.\n\n❤️ FIN ❤️");
+            yes.setVisibility(Button.GONE);
+            no.setVisibility(Button.GONE);
+        }
+    }
 }
