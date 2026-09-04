@@ -1,0 +1,14 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ android:layout_width="match_parent" android:layout_height="match_parent" android:background="#101522">
+ <LinearLayout android:id="@+id/box" android:orientation="vertical" android:gravity="center"
+  android:padding="32dp" android:layout_width="match_parent" android:layout_height="match_parent">
+  <TextView android:id="@+id/title" android:text="LEO Y ADRIÁN" android:textColor="#FFFFFF"
+   android:textSize="34sp" android:textStyle="bold" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+  <TextView android:id="@+id/story" android:text="Leo llega de la escuela..." android:textColor="#E8ECF5"
+   android:textSize="21sp" android:gravity="center" android:padding="24dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+  <LinearLayout android:orientation="horizontal" android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content">
+   <Button android:id="@+id/yes" android:text="❤️ SÍ" android:textSize="20sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="12dp"/>
+   <Button android:id="@+id/no" android:text="❌ NO" android:textSize="20sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="12dp"/>
+  </LinearLayout>
+ </LinearLayout>
+</FrameLayout>
